@@ -1,24 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PanoramicImageView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8LK-Oo-iGF" customClass="CTPanoramaView" customModule="CTPanoramaView">
+                                <rect key="frame" x="15" y="79" width="363" height="694"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlf-mH-spw">
+                                <rect key="frame" x="160" y="788" width="73" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mCw-5y-WT2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="NEXT"/>
+                                <connections>
+                                    <action selector="nextBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D7S-M4-Ri8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="xlf-mH-spw" firstAttribute="top" secondItem="8LK-Oo-iGF" secondAttribute="bottom" constant="15" id="7eL-hM-YKh"/>
+                            <constraint firstItem="xlf-mH-spw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="160" id="BpC-yN-5nE"/>
+                            <constraint firstItem="8LK-Oo-iGF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="MFv-Pm-XU1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8LK-Oo-iGF" secondAttribute="trailing" constant="15" id="MQJ-Zv-2pX"/>
+                            <constraint firstItem="xlf-mH-spw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="OGh-Gh-F8E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xlf-mH-spw" secondAttribute="trailing" constant="160" id="cX6-sn-aqu"/>
+                            <constraint firstItem="8LK-Oo-iGF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="oRD-Ne-6SB"/>
+                            <constraint firstItem="xlf-mH-spw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uZq-Zd-RQy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="panoramaView" destination="8LK-Oo-iGF" id="T27-Dh-Z9k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.251908396946561" y="-523.23943661971839"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="Ciz-hM-jS7">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GeQ-qi-jVg" customClass="SecondViewController" customModule="PanoramicImageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IzD-j2-Gdk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIF-rF-MsX" customClass="CTPanoramaView" customModule="CTPanoramaView">
+                                <rect key="frame" x="15" y="79" width="363" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NP0-b7-OQi"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="QIF-rF-MsX" firstAttribute="leading" secondItem="NP0-b7-OQi" secondAttribute="leading" constant="15" id="Ct3-SP-WgO"/>
+                            <constraint firstItem="QIF-rF-MsX" firstAttribute="top" secondItem="NP0-b7-OQi" secondAttribute="top" constant="20" id="HSv-xf-TL8"/>
+                            <constraint firstItem="NP0-b7-OQi" firstAttribute="bottom" secondItem="QIF-rF-MsX" secondAttribute="bottom" constant="20" id="Nob-WV-QNR"/>
+                            <constraint firstItem="NP0-b7-OQi" firstAttribute="trailing" secondItem="QIF-rF-MsX" secondAttribute="trailing" constant="15" id="cOL-Iy-1wr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="panoramaView" destination="QIF-rF-MsX" id="ZQD-q7-kYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7h-LY-Tru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867.93893129770993" y="-523.23943661971839"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
